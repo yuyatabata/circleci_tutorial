@@ -1,0 +1,7 @@
+versions: 2
+jobs:
+  build:
+    docker:
+      -image: cirleci/python:3.6
+    steps:
+      - run: echo 'hello world'
