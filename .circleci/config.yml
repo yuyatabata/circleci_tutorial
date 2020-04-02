@@ -10,7 +10,7 @@ jobs:
           command: |
             sudo chown -R circleci:circleci /usr/local/bin
             sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
-            pip install coverage == 5.0a5
+            pip install coverage==5.0a5
       - run:
           command: |
             coverage run -m unittest discover -s ./test
