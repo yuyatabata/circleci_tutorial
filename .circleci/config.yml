@@ -1,8 +1,18 @@
 versions: 2.1
 jobs:
   build:
+    working_directory: ~/circleci_tutorialf
     docker:
       - image: circleci/python:3.6
     steps:
       - checkout
-      - run: echo 'hello world'
+      - run:
+          command: |
+            sudo chown -R circleci:circleci /usr/local/bin
+            sudo chown -R circleci:circleci /usr/local/lib/python3.7/site-packages
+            pip install coverage == 5.0a5
+      - run:
+          command: |
+            coverage run -m unittest discover -s ./test
+      - store_test_results:
+          path: result.xml
