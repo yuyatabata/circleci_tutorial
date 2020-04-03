@@ -1,7 +1,7 @@
 versions: 2.1
 jobs:
   build:
-    working_directory: ~/circleci_tutorialf
+    working_directory: ~/circleci_tutorial
     docker:
       - image: circleci/python:3.6
     steps:
@@ -14,5 +14,6 @@ jobs:
       - run:
           command: |
             coverage run -m unittest discover -s ./test
+            coverage.exe report --omit=*/test/*,*/venv/*
       - store_test_results:
           path: result.xml
