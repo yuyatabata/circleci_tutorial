@@ -14,6 +14,5 @@ jobs:
       - run:
           command: |
             coverage run -m unittest discover -s ./test
-            coverage.exe report --omit=*/test/*,*/venv/*
       - store_test_results:
           path: result.xml
