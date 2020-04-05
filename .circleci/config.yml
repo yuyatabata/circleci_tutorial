@@ -14,5 +14,6 @@ jobs:
       - run:
           command: |
             coverage run -m unittest discover -s ./test
+            coverage html 
       - store_test_results:
           path: result.xml
