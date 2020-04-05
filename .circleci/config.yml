@@ -13,7 +13,8 @@ jobs:
             pip install coverage==5.0a5
       - run:
           command: |
-            coverage run -m unittest discover -s ./test
+            coverage run
+            coverage report
             coverage html 
       - store_test_results:
-          path: result.xml
+          path: htmlcov
